@@ -4,13 +4,14 @@ import numpy as np
 import pickle
 from sklearn.ensemble import RandomForestClassifier
 
-st.write("""
-# Penguin Prediction App
+Profile of Ravi Shekhar Tiwari="https://www.rstiwari.com"
+st.markdow(Profile of Ravi Shekhar Tiwari, unsafe_allow_html=True)
 
-This app predicts the **Palmer Penguin** species!
+Medium Profile="https://tiwari11-rst.medium.com/"
+st.markdow(Medium Profile, unsafe_allow_html=True)
 
-Data obtained from the [palmerpenguins library](https://github.com/allisonhorst/palmerpenguins) in R by Allison Horst.
-""")
+st.write("
+# Penguin Prediction Application")
 
 st.sidebar.header('User Input Features')
 
@@ -18,7 +19,7 @@ st.sidebar.markdown("""
 [Example CSV input file](https://raw.githubusercontent.com/dataprofessor/data/master/penguins_example.csv)
 """)
 
-# Collects user input features into dataframe
+
 uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
 if uploaded_file is not None:
     input_df = pd.read_csv(uploaded_file)
@@ -40,8 +41,7 @@ else:
         return features
     input_df = user_input_features()
 
-# Combines user input features with entire penguins dataset
-# This will be useful for the encoding phase
+
 penguins_raw = pd.read_csv('penguins_cleaned.csv')
 penguins = penguins_raw.drop(columns=['species'])
 df = pd.concat([input_df,penguins],axis=0)
@@ -78,3 +78,9 @@ st.write(penguins_species[prediction])
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
+
+
+st.write("# iMPORTANT LINKS")
+
+Dataset_Link="https://github.com/allisonhorst/palmerpenguins"
+st.markdown(Dataset_Link, unsafe_allow_html=True)
